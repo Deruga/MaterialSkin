@@ -104,7 +104,8 @@ namespace MaterialSkin.Animations
                 }
             }
 
-            OnAnimationProgress?.Invoke(this);
+            if (OnAnimationProgress != null)
+                OnAnimationProgress.Invoke(this);
         }
 
         public bool IsAnimating()
@@ -208,7 +209,8 @@ namespace MaterialSkin.Animations
                 }
 
                 _animationTimer.Stop();
-                OnAnimationFinished?.Invoke(this);
+                if (OnAnimationFinished != null)
+                    OnAnimationFinished.Invoke(this);
             }
         }
 
@@ -229,7 +231,8 @@ namespace MaterialSkin.Animations
                 }
 
                 _animationTimer.Stop();
-                OnAnimationFinished?.Invoke(this);
+                if (OnAnimationFinished != null)
+                    OnAnimationFinished.Invoke(this);
             }
         }
 

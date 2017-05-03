@@ -13,7 +13,7 @@ namespace MaterialSkin.Controls
         [Browsable(false)]
         public int Depth { get; set; }
         [Browsable(false)]
-        public MaterialSkinManager SkinManager => MaterialSkinManager.Instance;
+        public MaterialSkinManager SkinManager { get { return  MaterialSkinManager.Instance; }}
         [Browsable(false)]
         public MouseState MouseState { get; set; }
 
@@ -62,7 +62,8 @@ namespace MaterialSkin.Controls
                     _delayesArgs = e;
 
                     //Fire custom event to trigger actions directly but keep cms open
-                    OnItemClickStart?.Invoke(this, e);
+                    if (OnItemClickStart != null)
+                    OnItemClickStart.Invoke(this, e);
 
                     //Start animation
                     AnimationManager.StartNewAnimation(AnimationDirection.In);
@@ -95,7 +96,7 @@ namespace MaterialSkin.Controls
     {
         //Properties for managing the material design properties
         public int Depth { get; set; }
-        public MaterialSkinManager SkinManager => MaterialSkinManager.Instance;
+        public MaterialSkinManager SkinManager { get { return MaterialSkinManager.Instance; } }
         public MouseState MouseState { get; set; }
 
 

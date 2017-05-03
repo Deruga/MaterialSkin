@@ -13,7 +13,7 @@ namespace MaterialSkin.Controls
         [Browsable(false)]
         public int Depth { get; set; }
         [Browsable(false)]
-        public MaterialSkinManager SkinManager => MaterialSkinManager.Instance;
+        public MaterialSkinManager SkinManager { get { return  MaterialSkinManager.Instance; }}
         [Browsable(false)]
         public MouseState MouseState { get; set; }
 
@@ -29,7 +29,7 @@ namespace MaterialSkin.Controls
 
         public int SelectionStart { get { return _baseTextBox.SelectionStart; } set { _baseTextBox.SelectionStart = value; } }
         public int SelectionLength { get { return _baseTextBox.SelectionLength; } set { _baseTextBox.SelectionLength = value; } }
-        public int TextLength => _baseTextBox.TextLength;
+        public int TextLength { get { return _baseTextBox.TextLength; } }
 
         public bool UseSystemPasswordChar { get { return _baseTextBox.UseSystemPasswordChar; } set { _baseTextBox.UseSystemPasswordChar = value; } }
         public char PasswordChar { get { return _baseTextBox.PasswordChar; } set { _baseTextBox.PasswordChar = value; } }

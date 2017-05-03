@@ -247,7 +247,7 @@ namespace MaterialSkin
             ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
         }
 
-        public static MaterialSkinManager Instance => _instance ?? (_instance = new MaterialSkinManager());
+        public static MaterialSkinManager Instance { get { return _instance ?? (_instance = new MaterialSkinManager()); } }
 
         public void AddFormToManage(MaterialForm materialForm)
         {
